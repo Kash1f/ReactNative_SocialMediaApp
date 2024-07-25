@@ -1,26 +1,26 @@
-import { Button, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Button, StyleSheet, Text, View } from "react-native";
+import React from "react";
 
-const HomeScreen = ({navigation}) => {
+const HomeScreen = (props) => {
+  console.log(props);
   return (
     <View style={styles.viewStyle}>
-    <Text>HomeScreen</Text>
-    <Button title='Profile' onPress={()=>navigation.navigate('Profile')}/>
-      <View style={{margin:10}}>
-    <Button title='User' onPress={()=>navigation.navigate('User')}/>
+      <Text>HomeScreen</Text>
+      <Button title="Profile" onPress={() => props.navigation.navigate("Profile", {
+        name:"Kashif"
+        })} />
+     
     </View>
-  </View>
-  )
-}
+  );
+};
 
-export default HomeScreen
+export default HomeScreen;
 
 const styles = StyleSheet.create({
   viewStyle: {
-    display:'flex',
-    marginTop:40,
-    justifyContent:'center',
-    alignItems:'center',
-    flex:1
-  }
-})
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1,
+  },
+});

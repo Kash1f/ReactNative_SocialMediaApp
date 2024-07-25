@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar, StyleSheet, Text, View } from 'react-native';
 import HomeScreen from './screens/HomeScreen';
 import UserScreen from './screens/UserScreen';
 import ProfileScreen from './screens/ProfileScreen';
@@ -12,15 +12,28 @@ import ProfileScreen from './screens/ProfileScreen';
   const Stack = createStackNavigator(); 
 
   return (
+    <>
    <NavigationContainer>
     <Stack.Navigator
     initialRouteName='Home'
+    screenOptions={{
+      statusBarColor:'orange',
+      headerStyle:{
+        backgroundColor:'blue'
+      },
+      headerTintColor:'#fff',
+      headerTitleAlign:'center'
+    }}
     >
-      <Stack.Screen name="Home" component={HomeScreen} options={{headerShown:false}}/>
-      <Stack.Screen name="Profile" component={ProfileScreen} options={{headerShown:false}}/>
-      <Stack.Screen name="User" component={UserScreen} options={{headerShown:false}}/>
+      <Stack.Screen name="Home" component={HomeScreen}/>
+      <Stack.Screen name="Profile" component={ProfileScreen} />
+      <Stack.Screen name="User" component={UserScreen}/>
+     
     </Stack.Navigator>
    </NavigationContainer>
+
+    <StatusBar style="light" />
+    </>
   );
 }
 
