@@ -5,7 +5,7 @@ const ProfileScreen = (props) => {
   console.log(props);
   return (
     <View style={styles.viewStyle}>
-      <Text style={styles.textStyle}>{props.route.params.name}</Text>
+      <Text style={styles.textStyle}>Profile Screen</Text>
       <View style={{ margin: 10 }}>
         <Button title="User" onPress={() => props.navigation.navigate("User")} />
       </View>
