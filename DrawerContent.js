@@ -5,7 +5,7 @@ import { Avatar, Title } from "react-native-paper";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+// import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const DrawerList = [
   { icon: "home-outline", label: "Home", navigateTo: "Home" },
@@ -40,12 +40,14 @@ const DrawerItems = (props) => {
   });
 };
 function DrawerContent(props) {
-  const navigation = useNavigation();
-  function signOut() {
-    AsyncStorage.setItem("isLoggedIn", "");
-    AsyncStorage.setItem("token", "");
-    navigation.navigate("LoginUser");
-  }
+
+//   const navigation = useNavigation();
+//   function signOut() {
+//     AsyncStorage.setItem("isLoggedIn", "");
+//     AsyncStorage.setItem("token", "");
+//     navigation.navigate("LoginUser");
+  
+
   return (
     <View style={{ flex: 1 }}>
       <DrawerContentScrollView {...props}>
@@ -61,9 +63,9 @@ function DrawerContent(props) {
                   style={{ marginTop: 5 }}
                 />
                 <View style={{ marginLeft: 10, flexDirection: "column" }}>
-                  <Title style={styles.title}>Adarsh</Title>
+                  <Title style={styles.title}>Kyrex</Title>
                   <Text style={styles.caption} numberOfLines={1}>
-                    adarshthakur210@gmail.com
+                    kyrexahmed@email.com
                   </Text>
                 </View>
               </View>

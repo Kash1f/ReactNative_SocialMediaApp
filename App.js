@@ -8,6 +8,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import "react-native-gesture-handler";
 import { Drawer } from "react-native-paper";
 import { EvilIcons } from '@expo/vector-icons';
+import DrawerContent from "./DrawerContent";
 
 const StackNav = () => {
   const Stack = createStackNavigator();
@@ -45,7 +46,9 @@ const DrawerNav = () => {
    //this will initalize the screens in the drawer navigation
   const Drawer = createDrawerNavigator();
   return(
-    <Drawer.Navigator screenOptions={{headerShown:false}}>
+    <Drawer.Navigator 
+    drawerContent={props => <DrawerContent{...props}/>}
+    screenOptions={{headerShown:false}}>
     <Drawer.Screen name="Home" component={StackNav} />
   
   </Drawer.Navigator>
